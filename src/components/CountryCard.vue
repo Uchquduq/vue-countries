@@ -1,6 +1,5 @@
 <template>
   <v-card :elevation="0" class="mx-auto" max-width="400" height="200">
-
     <v-img class=" rounded-lg align-end text-white" :src="country.flags.svg" height="150" cover>
     </v-img>
     <v-card-actions>
@@ -15,7 +14,6 @@
 <script>
 export default {
   data: () => ({
-
   }),
   props: {
     country: {
