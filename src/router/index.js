@@ -1,6 +1,9 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import CountryList from '../views/CountryList.vue'
 
+import CountryLayout from '../views/country/CountryLayout.vue'
+import CountryDetails from '../views/country/CountryDetails.vue'
+
 import NotFound from '../views/NotFound.vue'
 import NetworkError from '../views/NetworkError.vue'
 
@@ -9,6 +12,18 @@ const routes = [{
   path: '/',
   name: 'CountryList',
   component: CountryList
+},
+{
+  path: '/countries/:id',
+  name: 'CountryLayout',
+  props: true,
+  component: CountryLayout,
+  children: [{
+    path: '',
+    name: 'CountryDetails',
+    component: CountryDetails,
+  },
+  ]
 },
 {
   path: '/about',

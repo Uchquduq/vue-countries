@@ -9,6 +9,9 @@ export default createStore({
   getters: {
     countries(state) {
       state.countries
+    },
+    country(state) {
+      state.country
     }
   },
   mutations: {
@@ -27,19 +30,14 @@ export default createStore({
           throw (error)
         })
     },
-    fetchCountry({ commit, state }, id) {
-      const existingCountry = state.countries.find(country => country.id === id)
-      if (existingCountry) {
-        commit('SET_COUNTRY', existingCountry)
-      } else {
-        return EventService.getCountry(id)
-          .then(response =>
-            commit('SET_COUNTRY', response.data))
-          .catch((error) => {
-            throw (error)
-          }
-          )
-      }
+    fetchCountry({ commit }, id) {
+      return EventService.getCountry(id)
+        .then(response =>
+          commit('SET_COUNTRY', response.data))
+        .catch((error) => {
+          throw (error)
+        }
+        )
     },
   },
   modules: {

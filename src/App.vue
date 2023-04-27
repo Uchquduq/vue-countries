@@ -4,9 +4,8 @@
       <v-app-bar-nav-icon @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
 
       <v-toolbar-title class="d-flex align-center mt-1">
-
-        <v-text class="mt-2 mr-2">World Countries </v-text>
-        <v-icon icon="mdi-earth"></v-icon>
+        <router-link :to="{ name: 'CountryList' }"> World Countries </router-link>
+        <v-icon icon=" mdi-earth"></v-icon>
       </v-toolbar-title>
       <v-text-field :elevation="0" density="compact" label="Search" append-inner-icon="mdi-magnify" class="mr-10"
         single-line hide-details>
@@ -48,7 +47,7 @@
       <v-container>
         <v-app-bar :elevation="0" class="mt-0 mb-8">
           <v-slide-group :show-arrows="false">
-            <v-slide-group-item v-for="n of alphabet" :key="n" v-slot="{ isSelected, toggle }">
+            <v-slide-group-item v-for="   n    of    alphabet   " :key="n" v-slot="{ isSelected, toggle }">
               <v-btn density="comfortable" class="text-subtitle-2 ma-2 font-weight-medium" variant="tonal"
                 :color="isSelected ? 'black' : undefined" @click="toggle">
                 {{ n }}
