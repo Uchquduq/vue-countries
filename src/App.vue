@@ -1,66 +1,6 @@
 <template>
   <v-app id="inspire">
-    <v-app-bar :elevation="0" class="">
-      <v-app-bar-nav-icon @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
-
-      <v-toolbar-title class="d-flex align-center mt-1">
-        <router-link :to="{ name: 'CountryList' }"> World Countries </router-link>
-        <v-icon icon=" mdi-earth"></v-icon>
-      </v-toolbar-title>
-      <v-text-field :elevation="0" density="compact" label="Search" append-inner-icon="mdi-magnify" class="mr-10"
-        single-line hide-details>
-      </v-text-field>
-      <v-spacer></v-spacer>
-    </v-app-bar>
-
-    <v-navigation-drawer permanent :elevation="0" v-model="drawer" location="left" class="border-0">
-      <v-list class="" nav>
-        <v-btn variant="text" class="d-flex align-center justify-start rounded-lg" color="bg-dark" width="300"
-          height="40">
-          <img src="./assets/icons/home.svg">
-          <v-text class="ml-5 text-body-1">Home</v-text>
-        </v-btn>
-        <v-btn variant="text" class="d-flex align-center justify-start rounded-lg" color="bg-dark" width="300"
-          height="40">
-          <img src="./assets/icons/explore.svg">
-          <v-text class="ml-5 text-body-1">Explore</v-text>
-        </v-btn>
-        <v-btn variant="text" class="d-flex align-center justify-start rounded-lg" color="bg-dark" width="300"
-          height="40"> <img src="./assets/icons/shorts.svg"><v-text class="ml-5 text-body-1">Shorts</v-text></v-btn>
-        <v-divider class="ml-1 mt-4 mb-4"></v-divider>
-        <v-btn variant="text" class="d-flex align-center justify-start rounded-lg" color="bg-dark" width="300"
-          height="40"> <img src="./assets/icons/subscription.svg" class=""><v-text
-            class=" ml-5 text-body-1">Subscriptions</v-text></v-btn>
-        <v-btn variant="text" class="d-flex align-center justify-start rounded-lg" color="bg-dark" width="300"
-          height="40"> <img src="./assets/icons/library.svg"><v-text class="ml-5 text-body-1">Library</v-text></v-btn>
-        <v-btn variant="text" class="d-flex align-center justify-start rounded-lg" color="bg-dark" width="300"
-          height="40"> <img src="./assets/icons/history.svg"><v-text class="ml-5 text-body-1">History</v-text></v-btn>
-        <v-btn variant="text" class="d-flex align-center justify-start rounded-lg" color="bg-dark" width="300"
-          height="40"> <img src="./assets/icons/watchlater.svg"><v-text class="ml-5 text-body-1">Watch
-            Later</v-text></v-btn>
-        <v-btn variant="text" class="d-flex align-center justify-start rounded-lg" color="bg-dark" width="300"
-          height="40"> <img src="./assets/icons/laked.svg"><v-text class="ml-5 text-body-1">Laked Videos</v-text></v-btn>
-      </v-list>
-    </v-navigation-drawer>
-
-    <v-main>
-      <v-container>
-        <v-app-bar :elevation="0" class="mt-0 mb-8">
-          <v-slide-group :show-arrows="false">
-            <v-slide-group-item v-for="   n    of    alphabet   " :key="n" v-slot="{ isSelected, toggle }">
-              <v-btn density="comfortable" class="text-subtitle-2 ma-2 font-weight-medium" variant="tonal"
-                :color="isSelected ? 'black' : undefined" @click="toggle">
-                {{ n }}
-              </v-btn>
-            </v-slide-group-item>
-          </v-slide-group>
-        </v-app-bar>
-        <v-row>
-          <router-view />
-        </v-row>
-      </v-container>
-    </v-main>
-
+    <router-view></router-view>
   </v-app>
 </template>
 

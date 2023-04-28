@@ -18,5 +18,8 @@ export default {
   },
   postEvent(event) {
     return apiClient.post('/events', event)
+  },
+  getbyRegion(value) {
+    return apiClient.get('/region/' + value)
   }
 }
